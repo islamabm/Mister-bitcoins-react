@@ -27,6 +27,9 @@ export class ContactEdit extends Component {
       btnService.animateButton(ev).then(() => {
         this.props.history.push('/')
       })
+      let synth = window.speechSynthesis
+      let utterThis = new SpeechSynthesisUtterance(`Contact edited`)
+      synth.speak(utterThis)
       // setTimeout(() => {
       // }, 1000)
     } catch (error) {

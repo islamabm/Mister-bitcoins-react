@@ -3,6 +3,7 @@ import { contactService } from '../services/contact.service'
 import { ContactList } from '../cmps/ContactList'
 import { ContactDetails } from './ContactDetails'
 import { ContactFilter } from '../cmps/ContactFilter'
+// import { Transcript } from '../cmps/Transcript'
 import { connect } from 'react-redux'
 import {
   loadContacts,
@@ -20,6 +21,12 @@ class _ContactIndex extends Component {
   onRemoveContact = async (contactId) => {
     try {
       const removedContact = await this.props.removeContact(contactId)
+      // const contact = contactService.getContacts().map((c)=>c._id === contactId)
+      let synth = window.speechSynthesis
+      let utterThis = new SpeechSynthesisUtterance(
+        `Contact with  ${contactId} id removed`
+      )
+      synth.speak(utterThis)
       console.log('removedContact', removedContact)
     } catch (error) {
       console.err('error:', error)
@@ -30,12 +37,21 @@ class _ContactIndex extends Component {
     this.props.setFilterBy(filterBy)
     this.props.loadContacts()
   }
+  // handleTranscriptCommand = (commandInfo) => {
+  //   console.log('commandInfo', commandInfo)
+  //   if (commandInfo.command === 'filter') {
+  //     this.onChangeFilter({ term: commandInfo.value })
+  //   } else if (commandInfo.command === 'remove') {
+  //     this.onRemoveContact(commandInfo.value)
+  //   }
+  // }
 
   render() {
     const { contacts, filterBy } = this.props
     if (!contacts) return <div className="loader"></div>
     return (
       <section className="contact-index">
+        {/* <Transcript onCommand={this.handleTranscriptCommand} /> */}
         <ContactFilter
           filterBy={filterBy}
           onChangeFilter={this.onChangeFilter}

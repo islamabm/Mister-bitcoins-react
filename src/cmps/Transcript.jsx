@@ -15,6 +15,19 @@ export class Transcript extends Component {
     }
   }
 
+  // handleResult = (event) => {
+  //   const last = event.results.length - 1
+  //   const transcript = event.results[last][0].transcript.trim()
+
+  //   let [command, ...valueParts] = transcript.split(' ')
+  //   let value = valueParts.join(' ')
+
+  //   command = command.toLowerCase()
+  //   if (command === 'filter' || command === 'remove') {
+  //     this.props.onCommand({ command, value })
+  //   }
+  // }
+
   emitTranscript = (text) => {
     const event = new CustomEvent('transcript', { detail: text })
     window.dispatchEvent(event)
