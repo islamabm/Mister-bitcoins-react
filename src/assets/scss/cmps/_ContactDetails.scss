@@ -1,0 +1,81 @@
+.contact-details {
+  position: relative;
+  background-image: url('https://media.freestocktextures.com/cache/6b/37/6b37fd3048eafa292b06f8f3b74f55b2.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  max-width: 600px;
+  padding: 20px;
+
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+
+  h3 {
+    margin: 10px 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #222;
+    text-align: center;
+  }
+
+  img {
+    display: block;
+    margin: 20px 0;
+    max-width: 80%;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.coins-details {
+  margin-inline-start: -85px;
+}
+/////////////////////
+///
+.contact-details .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  z-index: 10;
+}
+.contact-details .arrow.left {
+  left: 10px;
+  background-image: url('https://cdn3.iconfinder.com/data/icons/fatcow/32/arrow_left.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.contact-details .arrow.right {
+  right: 10px;
+  background-image: url('https://cdn3.iconfinder.com/data/icons/fatcow/32/arrow_right.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.contact-details .arrow:hover {
+  transform: translateY(-50%) scale(1.2);
+}

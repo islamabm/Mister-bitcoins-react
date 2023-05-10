@@ -1,0 +1,70 @@
+.chart-buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.btn-chart-type {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-chart-type:hover {
+  background-color: #0062cc;
+}
+
+.chart-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.chart-options button {
+  background-color: #f2f2f2;
+  color: #333;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.chart-options button:hover {
+  background-color: #e5e5e5;
+}
+
+/* Animation */
+.chart-options button {
+  animation: fade-in 0.5s ease-in-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.statics-container {
+  background-image: url('https://static.vecteezy.com/system/resources/previews/005/022/427/non_2x/bitcoin-cryptocurrency-background-digital-money-exchange-of-blockchain-technology-cryptocurrency-mining-and-financial-illustration-free-vector.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media only screen and (max-width: 414px) {
+  .statics-container {
+    height: 50vh;
+  }
+}
