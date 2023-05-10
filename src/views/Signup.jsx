@@ -13,6 +13,11 @@ export class _Signup extends Component {
   doSignup = (event) => {
     event.preventDefault()
     userService.signup(this.state.fullname)
+    let synth = window.speechSynthesis
+    let utterThis = new SpeechSynthesisUtterance(
+      `Hello ${this.state.fullname} welcome to mister bitcoin application`
+    )
+    synth.speak(utterThis)
     this.props.history.push('/')
   }
 

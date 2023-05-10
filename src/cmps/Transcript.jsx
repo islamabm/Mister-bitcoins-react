@@ -57,6 +57,10 @@ export class Transcript extends Component {
     sr.onstart = () => {
       console.log('SR Started')
       this.setState({ isRecording: true })
+
+      // let synth = window.speechSynthesis
+      // let utterThis = new SpeechSynthesisUtterance(`Hello ${this.props.name}`)
+      // synth.speak(utterThis)
     }
 
     sr.onend = () => {

@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import { Transcript } from './Transcript'
 import { Link } from 'react-router-dom'
-
+import { userService } from '../services/user.service'
 export class ContactFilter extends Component {
   state = {
     filterBy: null,
+    // loggedinUser: userService.getLoggedinUser(),
   }
 
   componentDidMount() {
@@ -14,6 +15,10 @@ export class ContactFilter extends Component {
   componentWillUnmount() {
     window.removeEventListener('transcript', this.handleTranscript)
   }
+
+  // get user() {
+  //   return this.loggedinUser.name
+  // }
   handleTranscript = (event) => {
     const text = event.detail
     const field = 'name'
@@ -52,6 +57,7 @@ export class ContactFilter extends Component {
     return (
       <>
         <Transcript></Transcript>
+
         <form className="contact-filter">
           <Link className="add-contact-link" to="/contact/edit">
             Add contact
