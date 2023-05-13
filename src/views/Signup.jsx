@@ -1,45 +1,112 @@
-import React, { Component } from 'react'
+import React, { Component, useState, useEffect } from 'react'
+
 import { userService } from '../services/user.service'
 import { connect } from 'react-redux'
 import { spendBalance } from '../store/actions/user.actions'
-export class _Signup extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      fullname: '',
-    }
-  }
+import { googleLogout, useGoogleLogin } from '@react-oauth/google'
+import axios from 'axios'
+const _Signup = (props) => {
+  const [fullname, setFullname] = useState('')
+  const [user, setUser] = useState([])
+  const [profile, setProfile] = useState([])
 
-  doSignup = (event) => {
+  const doSignup = (event) => {
     event.preventDefault()
-    userService.signup(this.state.fullname)
+    userService.signup(fullname)
     let synth = window.speechSynthesis
     let utterThis = new SpeechSynthesisUtterance(
-      `Hello ${this.state.fullname} welcome to mister bitcoin application`
+      `Hello ${fullname} welcome to mister bitcoin application`
     )
     synth.speak(utterThis)
-    this.props.history.push('/')
+    props.history.push('/')
   }
 
-  handleFullnameChange = (event) => {
-    this.setState({ fullname: event.target.value })
+  const handleFullnameChange = (event) => {
+    setFullname(event.target.value)
   }
 
-  render() {
-    return (
-      <form className="signup-form" onSubmit={this.doSignup}>
+  const login = useGoogleLogin({
+    onSuccess: (codeResponse) => {
+      setUser({ ...codeResponse, access_token: codeResponse.access_token })
+      setFullname(codeResponse.profileObj.name)
+      userService.signup(profile.name)
+      let synth = window.speechSynthesis
+      let utterThis = new SpeechSynthesisUtterance(
+        `Hello ${profile.name} welcome to mister bitcoin application`
+      )
+      synth.speak(utterThis)
+      props.history.push('/')
+    },
+    onError: (error) => console.log('Login Failed:', error),
+  })
+  useEffect(() => {
+    if (profile.name) {
+      userService.signup(profile.name)
+      props.history.push('/')
+      let synth = window.speechSynthesis
+      let utterThis = new SpeechSynthesisUtterance(
+        `Hello ${profile.name} welcome to mister bitcoin application`
+      )
+      synth.speak(utterThis)
+    }
+  }, [profile, props.history])
+
+  useEffect(() => {
+    if (user) {
+      axios
+        .get(
+          `https://www.googleapis.com/oauth2/v1/userinfo?access_token=${user.access_token}`,
+          {
+            headers: {
+              Authorization: `Bearer ${user.access_token}`,
+              Accept: 'application/json',
+            },
+          }
+        )
+        .then((res) => {
+          setProfile(res.data)
+          console.log('Profile data:', res.data)
+        })
+        .catch((err) => console.log(err))
+    }
+  }, [user])
+
+  const logOut = () => {
+    googleLogout()
+    setProfile(null)
+  }
+
+  return (
+    <>
+      <form className="signup-form" onSubmit={doSignup}>
         <h2>Signup</h2>
         <input
           type="text"
-          value={this.state.fullname}
+          value={fullname}
           placeholder="Your full name"
-          onChange={this.handleFullnameChange}
+          onChange={handleFullnameChange}
         />
         <button type="submit">Signup</button>
       </form>
-    )
-  }
+
+      {/* {profile ? (
+        <div>
+          <img src={profile.picture} alt="user image" />
+          <h3>User Logged in</h3>
+          <p>Name: {profile.name}</p>
+          <p>Email Address: {profile.email}</p>
+          <br />
+          <br />
+          </div>
+          ) 
+        : ( */}
+      <button onClick={logOut}>Log out</button>
+      <button onClick={() => login()}>Sign in with Google 🚀 </button>
+      {/* )} */}
+    </>
+  )
 }
+
 const mapStateToProps = (state) => ({
   user: state.contactModule.user,
 })
