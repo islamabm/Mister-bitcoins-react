@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api'
 import { contactService } from '../services/contact.service'
+import { Audio } from 'react-loader-spinner'
 export function GoogleMaps() {
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: 'AIzaSyDgkCNsKW1vRJ4g3ZgAuoqf-qX2qHAg9eI',
@@ -25,7 +26,18 @@ export function GoogleMaps() {
     setSelectedContact(contact)
   }
 
-  if (!isLoaded) return <div className="loader"></div>
+  if (!isLoaded)
+    return (
+      <Audio
+        height="80"
+        width="80"
+        radius="9"
+        color="green"
+        ariaLabel="loading"
+        wrapperStyle
+        wrapperClass
+      />
+    )
 
   return (
     <div>
