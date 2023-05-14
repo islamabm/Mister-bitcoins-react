@@ -17,6 +17,8 @@ const contacts = [
     email: 'ochoahyde@renovize.com',
     phone: '+1 (968) 593-3824',
     coins: 0,
+    lat: 32.08,
+    lng: 34.78,
   },
   {
     _id: '5a5664025f6ae9aa24a99fde',
@@ -24,6 +26,8 @@ const contacts = [
     email: 'halliemclean@renovize.com',
     phone: '+1 (948) 464-2888',
     coins: 0,
+    lat: 31.7784,
+    lng: 35.2066,
   },
   {
     _id: '5a56640252d6acddd183d319',
@@ -31,6 +35,8 @@ const contacts = [
     email: 'parsonsnorris@renovize.com',
     phone: '+1 (958) 502-3495',
     coins: 0,
+    lat: 32.8192,
+    lng: 34.9992,
   },
   {
     _id: '5a566402ed1cf349f0b47b4d',
@@ -38,6 +44,8 @@ const contacts = [
     email: 'rachellowe@renovize.com',
     phone: '+1 (911) 475-2312',
     coins: 0,
+    lat: 31.95,
+    lng: 34.8,
   },
   {
     _id: '5a566402abce24c6bfe4699d',
@@ -45,6 +53,8 @@ const contacts = [
     email: 'dominiquesoto@renovize.com',
     phone: '+1 (807) 551-3258',
     coins: 0,
+    lat: 32.0889,
+    lng: 34.8864,
   },
   {
     _id: '5a566402a6499c1d4da9220a',
@@ -52,6 +62,8 @@ const contacts = [
     email: 'shanapope@renovize.com',
     phone: '+1 (970) 527-3082',
     coins: 0,
+    lat: 31.8,
+    lng: 34.65,
   },
   {
     _id: '5a566402f90ae30e97f990db',
@@ -59,6 +71,8 @@ const contacts = [
     email: 'faulknerflores@renovize.com',
     phone: '+1 (952) 501-2678',
     coins: 0,
+    lat: 32.3286,
+    lng: 34.8567,
   },
   {
     _id: '5a5664027bae84ef280ffbdf',
@@ -66,6 +80,8 @@ const contacts = [
     email: 'holderbean@renovize.com',
     phone: '+1 (989) 503-2663',
     coins: 0,
+    lat: 31.2589,
+    lng: 34.7997,
   },
   {
     _id: '5a566402e3b846c5f6aec652',
@@ -73,6 +89,8 @@ const contacts = [
     email: 'rosanneshelton@renovize.com',
     phone: '+1 (968) 454-3851',
     coins: 0,
+    lat: 32.0167,
+    lng: 34.7667,
   },
   {
     _id: '5a56640272c7dcdf59c3d411',
@@ -80,6 +98,8 @@ const contacts = [
     email: 'pamelanolan@renovize.com',
     phone: '+1 (986) 545-2166',
     coins: 0,
+    lat: 32.0833,
+    lng: 34.8333,
   },
   {
     _id: '5a5664029a8dd82a6178b15f',
@@ -87,6 +107,8 @@ const contacts = [
     email: 'roycantu@renovize.com',
     phone: '+1 (929) 571-2295',
     coins: 0,
+    lat: 32.07,
+    lng: 34.8236,
   },
   {
     _id: '5a5664028c096d08eeb13a8a',
@@ -94,6 +116,8 @@ const contacts = [
     email: 'olliechristian@renovize.com',
     phone: '+1 (977) 419-3550',
     coins: 0,
+    lat: 31.6667,
+    lng: 34.5667,
   },
   {
     _id: '5a5664026c53582bb9ebe9d1',
@@ -101,6 +125,8 @@ const contacts = [
     email: 'nguyenwalls@renovize.com',
     phone: '+1 (963) 471-3181',
     coins: 0,
+    lat: 31.8981,
+    lng: 34.8081,
   },
   {
     _id: '5a56640298ab77236845b82b',
@@ -108,6 +134,8 @@ const contacts = [
     email: 'glennasantana@renovize.com',
     phone: '+1 (860) 467-2376',
     coins: 0,
+    lat: 32.0167,
+    lng: 34.75,
   },
   {
     _id: '5a56640208fba3e8ecb97305',
@@ -115,6 +143,8 @@ const contacts = [
     email: 'maloneclark@renovize.com',
     phone: '+1 (818) 565-2557',
     coins: 0,
+    lat: 31.7456,
+    lng: 34.9867,
   },
   {
     _id: '5a566402abb3146207bc4ec5',
@@ -122,6 +152,8 @@ const contacts = [
     email: 'floydrutledge@renovize.com',
     phone: '+1 (807) 597-3629',
     coins: 0,
+    lat: 32.1714,
+    lng: 34.9083,
   },
   {
     _id: '5a56640298500fead8cb1ee5',
@@ -129,6 +161,8 @@ const contacts = [
     email: 'gracejames@renovize.com',
     phone: '+1 (959) 525-2529',
     coins: 0,
+    lat: 32.45,
+    lng: 34.9167,
   },
   {
     _id: '5a56640243427b8f8445231e',
@@ -136,6 +170,8 @@ const contacts = [
     email: 'tannergates@renovize.com',
     phone: '+1 (978) 591-2291',
     coins: 0,
+    lat: 32.1653,
+    lng: 34.8458,
   },
   {
     _id: '5a5664025c3abdad6f5e098c',
@@ -143,6 +179,8 @@ const contacts = [
     email: 'lillyconner@renovize.com',
     phone: '+1 (842) 587-3812',
     coins: 0,
+    lat: 32.7019,
+    lng: 35.3033,
   },
 ]
 

@@ -2,6 +2,7 @@ import { Component } from 'react'
 import { userService } from '../services/user.service.js'
 import { bitcoinService } from '../services/bitcoin.service.js'
 import { MovesList } from '../cmps/MovesList'
+import { Link } from 'react-router-dom'
 
 export class Home extends Component {
   state = {
@@ -51,7 +52,7 @@ export class Home extends Component {
             <h1>Bitcoin rate: {bitcoinRate}</h1>
           </div>
         </section>
-
+        <Link to="/maps">Maps</Link>
         <MovesList
           title={
             this.getMovesForUser.length ? 'Your Last 3 Moves:' : 'No Moves'

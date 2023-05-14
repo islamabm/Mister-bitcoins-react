@@ -57,7 +57,7 @@ export class ContactEdit extends Component {
 
   render() {
     const { contact } = this.state
-    const { name, email } = contact
+    const { name, email, lat, lng } = contact
     return (
       <section className="contact-edit">
         <h1>{contact._id ? 'Edit' : 'Add'} Contact</h1>
@@ -76,6 +76,25 @@ export class ContactEdit extends Component {
             type="text"
             name="email"
             id="email"
+          />
+          <input
+            value={lat}
+            onChange={this.handleChange}
+            type="number"
+            step="0.0001"
+            name="lat"
+            id="lat"
+            placeholder="Latitude"
+          />
+
+          <input
+            value={lng}
+            onChange={this.handleChange}
+            type="number"
+            step="0.0001"
+            name="lng"
+            id="lng"
+            placeholder="Longitude"
           />
 
           <button onClick={this.onSaveContact} className="bubbly-button">

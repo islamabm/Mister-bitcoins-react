@@ -10,7 +10,7 @@ import { AppHeader } from '../src/cmps/AppHeader'
 import { ContactDetails } from './views/ContactDetails'
 import { Signup } from './views/Signup'
 import { StatisticPage } from './views/StatisticPage'
-
+import { GoogleMaps } from './views/GoogleMaps'
 function App() {
   useEffect(() => {
     // Create the coins and add them to the DOM
@@ -39,6 +39,7 @@ function App() {
           <Route path="/contact/:id" component={ContactDetails} />
           <Route path="/sign" component={Signup} />
           <Route path="/home" component={HomePage} />
+          <Route path="/maps" component={GoogleMaps} />
           <Route path="/about" component={AboutPage} />
           <Route path="/chart" component={StatisticPage} />
           <Route path="/user" component={Home} />
