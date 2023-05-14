@@ -3,7 +3,7 @@ import { userService } from '../services/user.service.js'
 import { bitcoinService } from '../services/bitcoin.service.js'
 import { MovesList } from '../cmps/MovesList'
 import { Link } from 'react-router-dom'
-
+import { getBitcoinSvg } from '../services/SVG.service'
 export class Home extends Component {
   state = {
     user: null,
@@ -52,7 +52,14 @@ export class Home extends Component {
             <h1>Bitcoin rate: {bitcoinRate}</h1>
           </div>
         </section>
-        <Link to="/maps">Maps</Link>
+        <Link to="/maps">
+          {' '}
+          <span
+            dangerouslySetInnerHTML={{
+              __html: getBitcoinSvg('map'),
+            }}
+          />
+        </Link>
         <MovesList
           title={
             this.getMovesForUser.length ? 'Your Last 3 Moves:' : 'No Moves'
