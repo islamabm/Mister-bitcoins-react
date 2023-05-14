@@ -3,7 +3,7 @@ import { contactService } from '../services/contact.service'
 import TransferFund from '../cmps/TransferFund'
 import { MovesList } from '../cmps/MovesList'
 import { spendBalance, transferCoins } from '../store/actions/user.actions'
-import { getBitcoinSvg } from '../services/SVG.service'
+
 import { connect } from 'react-redux'
 class _ContactDetails extends Component {
   state = {
@@ -39,7 +39,10 @@ class _ContactDetails extends Component {
   get getMovesForContact() {
     const { contact } = this.state
     const { user } = this.props
-    return user.moves.filter((move) => move.toId === contact._id) || []
+    if (user && user.moves) {
+      return user.moves.filter((move) => move.toId === contact._id) || []
+    }
+    return []
   }
   onBack = () => {
     this.props.history.push('/')
@@ -65,10 +68,7 @@ class _ContactDetails extends Component {
             <h3>Phone: {contact.phone}</h3>
           </section>
           <div className="arrow left"></div>
-          <img
-            src={`https://robohash.org/${contact._id}?set=set5`}
-            alt={contact.name}
-          />
+          <img src={contact.url} alt={contact.name} />
 
           <div className="arrow right"></div>
           <button className="glow-on-hover" onClick={this.onBack}>
