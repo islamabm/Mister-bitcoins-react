@@ -20,14 +20,16 @@ function getUser() {
 }
 
 function signup(name) {
-  const user = {
-    name: name,
-    coins: 100,
-    moves: [],
-    url: 'https://cdn.pixabay.com/photo/2020/07/14/13/07/icon-5404125_1280.png',
-  }
-  storageService.save('user', user)
-  return user
+  return new Promise((resolve) => {
+    const user = {
+      name: name,
+      coins: 100,
+      moves: [],
+      url: 'https://cdn.pixabay.com/photo/2020/07/14/13/07/icon-5404125_1280.png',
+    }
+    storageService.save('user', user)
+    resolve(user)
+  })
 }
 
 function getLoggedinUser() {

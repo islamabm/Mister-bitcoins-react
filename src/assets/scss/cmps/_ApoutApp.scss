@@ -6,7 +6,6 @@
   height: 100vh;
   background-color: #f9f9f9;
 
-  /* Add media query for smaller screen sizes */
   @media only screen and (max-width: 414px) {
     height: auto;
     padding: 2rem;

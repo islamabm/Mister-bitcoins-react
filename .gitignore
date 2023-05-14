@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+
 NEXT_PUBLIC_GOOGLE_MAPS_API_KEY = "AIzaSyD4d1aPv7gbAj7lc6m1wFwMnmMuBGApoLI"
 # testing
 /coverage

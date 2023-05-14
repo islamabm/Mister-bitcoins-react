@@ -18,3 +18,33 @@ select {
 option {
   padding: 10px;
 }
+@media only screen and (max-width: 414px) {
+  .map-container {
+    height: 400px;
+    width: 414px;
+    margin: 20px;
+  }
+  select {
+    margin: 50px 150px;
+  }
+  .zoom-input {
+    margin: 20px 150px;
+  }
+}
+.zoom-input {
+  margin: 50px 700px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  outline: none;
+  width: 200px;
+}
+
+.zoom-input:focus {
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  //   color: #fff;
+  transform: translateY(-7px);
+}

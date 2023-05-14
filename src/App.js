@@ -11,6 +11,7 @@ import { ContactDetails } from './views/ContactDetails'
 import { Signup } from './views/Signup'
 import { StatisticPage } from './views/StatisticPage'
 import { GoogleMaps } from './views/GoogleMaps'
+
 function App() {
   useEffect(() => {
     // Create the coins and add them to the DOM

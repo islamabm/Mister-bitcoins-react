@@ -9,6 +9,7 @@ export function GoogleMaps() {
   const [contacts, setContacts] = useState([])
   const [selectedContact, setSelectedContact] = useState(null)
   const [center, setCenter] = useState({ lat: 31.6667, lng: 34.5667 })
+  const [zoom, setZoom] = useState(10)
   useEffect(() => {
     contactService.getContacts().then((contacts) => {
       setContacts(contacts)
@@ -24,6 +25,9 @@ export function GoogleMaps() {
     const contactId = event.target.value
     const contact = contacts.find((contact) => contact._id === contactId)
     setSelectedContact(contact)
+  }
+  const handleZoomChange = (event) => {
+    setZoom(parseInt(event.target.value, 10))
   }
 
   if (!isLoaded)
@@ -49,8 +53,15 @@ export function GoogleMaps() {
           </option>
         ))}
       </select>
+      <input
+        className="zoom-input"
+        type="number"
+        value={zoom}
+        onChange={handleZoomChange}
+      />
+
       <GoogleMap
-        zoom={10}
+        zoom={zoom}
         center={center}
         mapContainerClassName="map-container"
       >
